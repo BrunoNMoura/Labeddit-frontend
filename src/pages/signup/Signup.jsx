@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { handlePosts } from "../../router/Cordinator";
+import { handlePosts } from "../../routes/Cordinator";
 import { LabedditContext } from "../../global/LabedditContext";
 import * as s from "./styled";
 import Header from "../../components/header/Header";
