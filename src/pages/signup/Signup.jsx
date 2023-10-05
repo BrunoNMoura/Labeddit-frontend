@@ -9,7 +9,7 @@ import Header from "../../components/header/Header";
 import { ButtonToogleEye, ContainerEyePassword } from "../../styles/styles";
 import { BASE_URL } from "../../constants/constants";
 
-export default function SignupPage() {
+export default function Signup() {
 
   const context = useContext(LabedditContext)
   const navigate = useNavigate()
