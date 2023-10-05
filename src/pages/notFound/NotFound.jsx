@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../signup/styled";
 import { Container } from "./styled";
-import { handleHome } from "../../router/Cordinator";
+import { handleHome } from "../../routes/Cordinator";
 
 export function NotFound() {
   const navigate = useNavigate();

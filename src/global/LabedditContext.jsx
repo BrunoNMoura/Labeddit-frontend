@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 import { BASE_URL } from "../constants/constants";
-import { handleHome } from "../router/Cordinator";
 import Swal from "sweetalert2";
+import { handleHome } from "../routes/Cordinator";
 
 export const LabedditContext = createContext();
 

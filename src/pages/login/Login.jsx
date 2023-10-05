@@ -3,7 +3,7 @@ import { LabedditContext } from "../../global/LabedditContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import * as s from "./styled";
-import { handlePosts, handleSingUp } from "../../router/Cordinator";
+import { handlePosts, handleSingUp } from "../../routes/Cordinator";
 import { ButtonToogleEye, ContainerEyePassword } from "../../styles/styles";
 import { BASE_URL } from "../../constants/constants";
 import axios from "axios";
