@@ -1,0 +1,1 @@
+export const BASE_URL = "https://brunonmoura-labeddit-backend.onrender.com"
