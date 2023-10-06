@@ -1,11 +1,12 @@
 import { LabedditContext } from "../../global/LabedditContext";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react"
+import React, { useContext } from "react"
 import {
   Button, ButtonClose, ContainerButton,
   ContainerUser,
   HeaderLogo, WrapperHeader
 } from "./styled"
+import logo from "../../assets/logo-labeddit.png"
 
 export default function Header() {
   const context = useContext(LabedditContext)
@@ -22,7 +23,7 @@ export default function Header() {
         }
       </ContainerUser>
       <HeaderLogo>
-        <img src="image/logoSmall.svg" alt="logo header" />
+        <img src={logo} alt="logo header" width="50" height="50"/>
       </HeaderLogo>
 
       <ContainerButton>

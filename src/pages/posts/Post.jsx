@@ -5,8 +5,8 @@ import Header from "../../components/header/Header";
 import { LabedditContext } from "../../global/LabedditContext";
 import { WrapperPost } from "./styled";
 import { useNavigate } from "react-router-dom";
-import CardMessagePosts from "../../components/cards/cardmessage/CardMessagePosts";
-import TypeMessagePosts from "../../components/cards/typemessage/TypeMessagePosts";
+import CardPosts from "../../components/cards/card-message/CardPost";
+import TypeContentPosts from "../../components/cards/type-content/TypeContentPosts";
 
 export default function Post() {
   const navigate = useNavigate()
@@ -45,11 +45,11 @@ export default function Post() {
     <>
       <Header />
       <WrapperPost>
-        <TypeMessagePosts />
+        <TypeContentPosts />
         {
           isLoading ? <img src="/image/loading.gif"></img> :
 
-            posts?.map(post => CardMessagePosts(
+            posts?.map(post => CardPosts(
               post,
               context,
               posts, setPosts,

@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import closedEye from "../assets/olho-fechado.png"
+import openEye from "../assets/olho-aberto.png"
 
 export const ContainerEyePassword=styled.div`
   position: relative;
@@ -18,11 +20,11 @@ export const ButtonToogleEye = styled.div`
   transition: 0.3s ease;
   ${({ $eye }) => $eye &&
     `
-    background-image: url(/assets/olho-fechado.png);
+    background-image: url(${closedEye});
     `} 
   ${({ $eye }) => !$eye &&
     `
-    background-image: url(/assets/olho-aberto.png);
+    background-image: url(${openEye});
     `} 
   background-size: contain;
   background-repeat: no-repeat;

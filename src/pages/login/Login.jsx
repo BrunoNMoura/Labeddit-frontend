@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
+import React,{ useContext, useState } from "react";
 import { LabedditContext } from "../../global/LabedditContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import * as s from "./styled";
-import { handlePosts, handleSingUp } from "../../routes/Cordinator";
-import { ButtonToogleEye, ContainerEyePassword } from "../../styles/styles";
+import { handlePosts, handleSingUp } from "../../router/Cordinator";
+import { ButtonToogleEye, ContainerEyePassword } from "../../styles/styled";
 import { BASE_URL } from "../../constants/constants";
 import axios from "axios";
+import logo from "../../assets/logo-labeddit.png"
 
 export default function Login() {
   const context = useContext(LabedditContext);
@@ -31,7 +32,7 @@ export default function Login() {
     !context.userLoged && (
       <s.WrapperLogin onSubmit={sendFormLogin}>
         <s.LoginHeader>
-          <img src="/image/logoBig.svg" alt="" />
+          <img src={logo} alt="Logo-Labeddit" />
           <s.Title>LabEddit</s.Title>
           <p>O projeto de rede social da Labenu</p>
         </s.LoginHeader>
