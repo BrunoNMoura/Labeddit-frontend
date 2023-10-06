@@ -1,11 +1,12 @@
+import React from 'react';
 import { Routes, Route, Navigate, BrowserRouter, useNavigate } from "react-router-dom";
 import { LabedditContext } from "../global/LabedditContext";
 import { NotFound } from "../pages/notFound/NotFound";
-import Signup from "../pages/signup/SignupPage";
-import Login from "../pages/login/LoginPage";
-import Post from "../pages/posts/PostPage";
+import Signup from "../pages/signup/Signup";
+import Login from "../pages/login/Login";
+import Post from "../pages/posts/Post";
 import { useContext } from "react";
-import Comments from "../pages/comments/CommentsPage";
+import Comments from "../pages/comments/Comments";
 
 export function Router() {
     const context = useContext(LabedditContext)

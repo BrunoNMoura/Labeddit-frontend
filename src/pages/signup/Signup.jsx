@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { handlePosts } from "../../routes/Cordinator";
+import { handlePosts } from "../../router/Cordinator";
 import { LabedditContext } from "../../global/LabedditContext";
 import * as s from "./styled";
 import Header from "../../components/header/Header";
-import { ButtonToogleEye, ContainerEyePassword } from "../../styles/styles";
+import { ButtonToogleEye, ContainerEyePassword } from "../../styles/styled";
 import { BASE_URL } from "../../constants/constants";
 
 export default function Signup() {

@@ -1,6 +1,6 @@
 import { LabedditContext } from "../../../global/LabedditContext";
 import { useForm } from "../../../hooks/useForm"
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { ButtonMessage, ContainerMessage, Line, TextArea, WrapperMessage } from "./styled";
 
 export default function TypeContentComments() {

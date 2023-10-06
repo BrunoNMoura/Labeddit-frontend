@@ -1,8 +1,7 @@
-import { handlePostComment, infoLikes, updateLocalStatusLike } from "../../../pages/posts/PostPage"
-import { handleComments } from "../../../router/cordinator"
+import { handlePostComment, infoLikes, updateLocalStatusLike } from "../../../pages/posts/Post"
+import { handleComments } from "../../../router/Cordinator"
 import * as s  from "./styled"
 
-// renderiza CARD contendo texto do POST
 export default function CardPosts(post, context, posts, setPosts, navigate, editing, setEditing) {
 
   const { deletePostComment, reload, setReload } = context

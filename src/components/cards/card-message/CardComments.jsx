@@ -2,7 +2,7 @@ import {
   handlePostComment,
   infoLikes,
   updateLocalStatusLike,
-} from "../../../pages/posts/PostPage";
+} from "../../../pages/posts/Post";
 import {
   ButtonCancel,
   ButtonConfirm,

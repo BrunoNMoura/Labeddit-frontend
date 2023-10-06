@@ -1,8 +1,9 @@
+import React from 'react';
 import axios from "axios";
 import { createContext, useState } from "react";
 import { BASE_URL } from "../constants/constants";
 import Swal from "sweetalert2";
-import { handleHome } from "../routes/Cordinator";
+import { handleHome } from "../router/Cordinator";
 
 export const LabedditContext = createContext();
 
@@ -114,8 +115,8 @@ export default function LabedditProvider({ children }) {
     return response;
   };
 
-  const checkLogin = async () => {
-    const PATH = BASE_URL + "/users/checkLogin";
+  const login = async () => {
+    const PATH = BASE_URL + "/users/login";
     const token = getToken();
     let result = false;
     await axios
@@ -164,7 +165,7 @@ export default function LabedditProvider({ children }) {
     editPostComment,
     deletePostComment,
     modal,
-    checkLogin,
+    login,
     reload,
     setReload,
   };

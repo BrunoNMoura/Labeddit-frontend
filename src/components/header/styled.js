@@ -23,6 +23,7 @@ export const ContainerUser = styled.div`
 
 export const HeaderLogo = styled.div`
   width: 33.33%;
+  /* padding: 5%; */
   display: flex;
   justify-content: center;
 `;
