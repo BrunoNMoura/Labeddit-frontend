@@ -1,6 +1,5 @@
-import React from 'react';
 import axios from "axios";
-import { createContext, useState } from "react";
+import React,{ createContext, useState } from "react";
 import { BASE_URL } from "../constants/constants";
 import Swal from "sweetalert2";
 import { handleHome } from "../router/Cordinator";
@@ -115,22 +114,61 @@ export default function LabedditProvider({ children }) {
     return response;
   };
 
-  const login = async () => {
+  const login = async (loginData) => {
     const PATH = BASE_URL + "/users/login";
     const token = getToken();
-    let result = false;
-    await axios
-      .post(PATH, null, {
+    console.log("Token de autorização:", token);
+  
+    try {
+      const response = await axios.post(PATH, loginData, {
         headers: {
           Authorization: token,
         },
-      })
-      .then((response) => {
-        setUserLoged(response.data);
-        result = true;
       });
-    return result;
+      setUserLoged(response.data);
+      return true;
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+      return false;
+    }
   };
+  
+  // Exemplo de uso da função login
+  const loginData = {
+    email: "seuemail@example.com",
+    password: "suaSenha123@",
+  };
+  
+  login(loginData)
+  .then((loginResult) => {
+    if (loginResult) {
+      console.log("Login bem-sucedido!");
+    } else {
+      console.error("Erro ao fazer login. Verifique os detalhes do erro no console.");
+    }
+  })
+  .catch((error) => {
+    console.error("Erro ao chamar a função de login:", error);
+  });
+
+  // const login = async () => {
+  //   const PATH = BASE_URL + "/users/login";
+  //   const token = getToken();
+  //   console.log("Token de autorização:", token);
+  
+  //   try {
+  //     const response = await axios.post(PATH, null, {
+  //       headers: {
+  //         Authorization: token,
+  //       },
+  //     });
+  //     setUserLoged(response.data);
+  //     return true;
+  //   } catch (error) {
+  //     console.error("Erro ao fazer login:", error);
+  //     return false;
+  //   }
+  // };  
 
   const logout = (navigate) => {
     resetToken();

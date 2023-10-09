@@ -45,7 +45,7 @@ export default function Login() {
             value={form.email}
             onChange={onChange}
             title="insira um email válido!"
-            required
+            required autoComplete="email" 
           />
           <s.Input
             type={eyePassword ? "text" : "password"}
@@ -54,7 +54,7 @@ export default function Login() {
             value={form.password}
             onChange={onChange}
             minLength="6"
-            required
+            required autoComplete="current-password" 
           />
 
           <ContainerEyePassword>
