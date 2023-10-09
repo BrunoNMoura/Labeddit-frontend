@@ -131,45 +131,8 @@ export default function LabedditProvider({ children }) {
       console.error("Erro ao fazer login:", error);
       return false;
     }
-  };
+  };  
   
-  // Exemplo de uso da função login
-  const loginData = {
-    email: "seuemail@example.com",
-    password: "suaSenha123@",
-  };
-  
-  login(loginData)
-  .then((loginResult) => {
-    if (loginResult) {
-      console.log("Login bem-sucedido!");
-    } else {
-      console.error("Erro ao fazer login. Verifique os detalhes do erro no console.");
-    }
-  })
-  .catch((error) => {
-    console.error("Erro ao chamar a função de login:", error);
-  });
-
-  // const login = async () => {
-  //   const PATH = BASE_URL + "/users/login";
-  //   const token = getToken();
-  //   console.log("Token de autorização:", token);
-  
-  //   try {
-  //     const response = await axios.post(PATH, null, {
-  //       headers: {
-  //         Authorization: token,
-  //       },
-  //     });
-  //     setUserLoged(response.data);
-  //     return true;
-  //   } catch (error) {
-  //     console.error("Erro ao fazer login:", error);
-  //     return false;
-  //   }
-  // };  
-
   const logout = (navigate) => {
     resetToken();
     handleHome(navigate);
