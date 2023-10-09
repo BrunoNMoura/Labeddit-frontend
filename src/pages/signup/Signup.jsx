@@ -19,12 +19,34 @@ export default function Signup() {
     name: "",
     email: "",
     password: "",
-    repassword: "",
     newsLetter: "",
   });
 
+  const validatePassword = (password) => {
+    const uppercaseRegex = /[A-Z]/;
+    const numberRegex = /[0-9]/;
+    const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+
+    const isValid =
+      uppercaseRegex.test(password) &&
+      numberRegex.test(password) &&
+      specialCharacterRegex.test(password);
+
+    return isValid;
+  };
+
   const sendFormSingUp = async (e) => {
     e.preventDefault();
+
+    if (!validatePassword(form.password)) {
+      context.modal(
+        "A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial",
+        "",
+        "error"
+      );
+      return;
+    }
+
     const newUser = {
       name: form.name,
       email: form.email,
@@ -58,6 +80,7 @@ export default function Signup() {
             min="2"
             max="15"
             required
+            autocomplete="off" 
           />
           <s.Input
             type="email"
@@ -67,6 +90,7 @@ export default function Signup() {
             onChange={onChange}
             title="insira um email válido!"
             required
+            autoComplete="email"
           />
           <s.Input
             type={eyePassword ? "text" : "password"}
@@ -78,6 +102,7 @@ export default function Signup() {
             min="6"
             max="15"
             required
+            autoComplete="current-password"
           />
           <ContainerEyePassword>
             <ButtonToogleEye
